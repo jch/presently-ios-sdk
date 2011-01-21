@@ -23,13 +23,15 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
             url          = _url,
             httpMethod   = _httpMethod,
             params       = _params,
+            headers      = _headers,
             connection   = _connection,
             responseText = _responseText;
 
 + (PresentlyRequest *)getRequestWithParams:(NSMutableDictionary *) params
                                 httpMethod:(NSString *) httpMethod
                                   delegate:(id<PresentlyRequestDelegate>) delegate
-                                requestURL:(NSString *) url {
+                                requestURL:(NSString *) url
+                                   headers:(NSMutableDictionary *) headers {
 
   PresentlyRequest* request = [[[PresentlyRequest alloc] init] autorelease];
 
@@ -37,6 +39,7 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
   request.url           = [url retain];
   request.httpMethod    = [httpMethod retain];
   request.params        = [params retain];
+  request.headers       = [headers retain];
   request.connection    = nil;
   request.responseText  = nil;
 
@@ -189,6 +192,7 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
   [request setValue:kUserAgent forHTTPHeaderField:@"User-Agent"];
 
   [request setHTTPMethod:self.httpMethod];
+  [request setAllHTTPHeaderFields:(NSDictionary*)_headers];
   if ([self.httpMethod isEqualToString: @"POST"]) {  
     NSString* contentType = [NSString
                              stringWithFormat:@"multipart/form-data; boundary=%@", kStringBoundary];
@@ -207,6 +211,7 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
   [self.url release];
   [_httpMethod release];
   [_params release];
+  [_headers release];
   [super dealloc];
 }
 

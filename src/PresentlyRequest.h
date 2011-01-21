@@ -17,6 +17,7 @@
   NSString*             _url;
   NSString*             _httpMethod;
   NSMutableDictionary*  _params;
+  NSMutableDictionary*  _headers;
   NSURLConnection*      _connection;
   NSMutableData*        _responseText;
 }
@@ -25,13 +26,15 @@
 @property(nonatomic,copy) NSString *url;
 @property(nonatomic,copy) NSString *httpMethod;
 @property(nonatomic,assign) NSMutableDictionary *params;
+@property(nonatomic,assign) NSMutableDictionary *headers;
 @property(nonatomic,assign) NSURLConnection *connection;
 @property(nonatomic,assign) NSMutableData *responseText;
                         
 + (PresentlyRequest*)getRequestWithParams:(NSMutableDictionary *) params
                         httpMethod:(NSString *) httpMethod
                           delegate:(id<PresentlyRequestDelegate>)delegate
-                        requestURL:(NSString *) url;
+                        requestURL:(NSString *) url
+                           headers:(NSMutableDictionary *) headers;
 - (BOOL) loading;
 - (void) connect;
 - (id) formError:(NSInteger)code userInfo:(NSDictionary *) errorData;

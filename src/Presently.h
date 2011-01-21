@@ -8,6 +8,7 @@
  */
 
 #import "PresentlyRequest.h"
+#import "NSData+Base64.h"
 
 @protocol PresentlySessionDelegate;
 

@@ -42,25 +42,32 @@ static NSString *kFormat     = @"json";
       httpMethod:(NSString *)httpMethod 
         delegate:(id<PresentlyRequestDelegate>)delegate { 
 
+  
+  NSString *authorizationString;
+  authorizationString = [NSString stringWithFormat:@"%@:%@", self.username, self.password];
+  authorizationString = [[authorizationString dataUsingEncoding:NSUTF8StringEncoding] base64EncodedString];
+
+  NSMutableDictionary *headers = [NSDictionary dictionaryWithObjectsAndKeys:authorizationString, @"Authorization", nil];
   [params setValue:kSDKVersion forKey:@"sdk"];
 
 //  [request release];
 
   NSLog(@"[Presently] URL: %@", url);
   NSLog(@"[Presently] Parameters: %@", params);
+  NSLog(@"[Presently] Headers: %@", headers);
 
   request = [PresentlyRequest getRequestWithParams:params
                                    httpMethod:httpMethod
                                      delegate:delegate
-                                   requestURL:url];
+                                   requestURL:url
+                                      headers:headers];
+  
   [request connect];
 }
 
 - (NSString *) constructUrl {
-  return [NSString stringWithFormat: @"%@://%@:%@@%@.%@/%@",
+  return [NSString stringWithFormat: @"%@://%@.%@/%@",
           kProtocol,
-          self.username,
-          self.password,
           self.organization,
           kBaseUrl,
           kBasePath];

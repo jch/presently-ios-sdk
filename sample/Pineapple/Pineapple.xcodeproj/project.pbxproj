@@ -13,6 +13,7 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		555297B812E8FDB6007B1977 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 555297B712E8FDB6007B1977 /* NSData+Base64.m */; };
 		8D051D681242CEBE00E729ED /* pineapple_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D051D671242CEBE00E729ED /* pineapple_large.png */; };
 		8D051FFE1243B96000E729ED /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D051FF71243B96000E729ED /* JSONKit.m */; };
 		8D051FFF1243B96000E729ED /* PresentlyDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8D051FF81243B96000E729ED /* PresentlyDialog.bundle */; };
@@ -35,6 +36,8 @@
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Pineapple_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pineapple_Prefix.pch; sourceTree = "<group>"; };
+		555297B612E8FDB6007B1977 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "../../../../Downloads/NSData_Base64/NSData+Base64.h"; sourceTree = SOURCE_ROOT; };
+		555297B712E8FDB6007B1977 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "../../../../Downloads/NSData_Base64/NSData+Base64.m"; sourceTree = SOURCE_ROOT; };
 		8D051D671242CEBE00E729ED /* pineapple_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pineapple_large.png; sourceTree = "<group>"; };
 		8D051FF61243B96000E729ED /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = ../../src/JSONKit.h; sourceTree = SOURCE_ROOT; };
 		8D051FF71243B96000E729ED /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = ../../src/JSONKit.m; sourceTree = SOURCE_ROOT; };
@@ -103,6 +106,8 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				555297B612E8FDB6007B1977 /* NSData+Base64.h */,
+				555297B712E8FDB6007B1977 /* NSData+Base64.m */,
 				8D05218C1243F19600E729ED /* NSDate+timeAgoInWords.h */,
 				8D05218D1243F19600E729ED /* NSDate+timeAgoInWords.m */,
 				32CA4F630368D1EE00C91783 /* Pineapple_Prefix.pch */,
@@ -229,6 +234,7 @@
 				8D0520011243B96000E729ED /* PresentlyRequest.m in Sources */,
 				8D05204E1243C6B100E729ED /* UpdatesViewController.m in Sources */,
 				8D05218E1243F19600E729ED /* NSDate+timeAgoInWords.m in Sources */,
+				555297B812E8FDB6007B1977 /* NSData+Base64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,12 +272,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Don't Code Sign";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -279,13 +286,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Don't Code Sign";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
