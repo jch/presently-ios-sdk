@@ -36,8 +36,8 @@
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Pineapple_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pineapple_Prefix.pch; sourceTree = "<group>"; };
-		555297B612E8FDB6007B1977 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "../../../../Downloads/NSData_Base64/NSData+Base64.h"; sourceTree = SOURCE_ROOT; };
-		555297B712E8FDB6007B1977 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "../../../../Downloads/NSData_Base64/NSData+Base64.m"; sourceTree = SOURCE_ROOT; };
+		555297B612E8FDB6007B1977 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "../../src/NSData+Base64.h"; sourceTree = SOURCE_ROOT; };
+		555297B712E8FDB6007B1977 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "../../src/NSData+Base64.m"; sourceTree = SOURCE_ROOT; };
 		8D051D671242CEBE00E729ED /* pineapple_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pineapple_large.png; sourceTree = "<group>"; };
 		8D051FF61243B96000E729ED /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = ../../src/JSONKit.h; sourceTree = SOURCE_ROOT; };
 		8D051FF71243B96000E729ED /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = ../../src/JSONKit.m; sourceTree = SOURCE_ROOT; };
@@ -106,8 +106,6 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				555297B612E8FDB6007B1977 /* NSData+Base64.h */,
-				555297B712E8FDB6007B1977 /* NSData+Base64.m */,
 				8D05218C1243F19600E729ED /* NSDate+timeAgoInWords.h */,
 				8D05218D1243F19600E729ED /* NSDate+timeAgoInWords.m */,
 				32CA4F630368D1EE00C91783 /* Pineapple_Prefix.pch */,
@@ -142,6 +140,8 @@
 		8D051FF41243B96000E729ED /* PresentlyConnect */ = {
 			isa = PBXGroup;
 			children = (
+				555297B612E8FDB6007B1977 /* NSData+Base64.h */,
+				555297B712E8FDB6007B1977 /* NSData+Base64.m */,
 				8D051FF81243B96000E729ED /* PresentlyDialog.bundle */,
 				8D051FF91243B96000E729ED /* PresentlyConnect.h */,
 				8D051FFA1243B96000E729ED /* Presently.h */,
